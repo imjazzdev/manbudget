@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:manbudget/pages/drawer.dart';
 import 'package:manbudget/pages/start.dart';
+import 'package:manbudget/var_global.dart';
 
-class AdminProfile extends StatelessWidget {
-  const AdminProfile({super.key});
+class UserProfile extends StatelessWidget {
+  const UserProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +24,14 @@ class AdminProfile extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Text(
-                'ADMIN',
+                'USER',
                 style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 20.0, bottom: 20),
+              padding: const EdgeInsets.all(10.0),
               child: Text(
-                'farhanalhadad@gmail.com',
+                VarGlobal.USER_NOW,
                 style: TextStyle(
                   fontSize: 18,
                 ),

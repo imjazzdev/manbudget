@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:manbudget/pages/admin_home.dart';
+import 'package:manbudget/pages/main_navigator_admin.dart';
 import 'package:manbudget/var_global.dart';
 
 class AddData extends StatefulWidget {
@@ -45,16 +46,16 @@ class _AddDataState extends State<AddData> {
 
   addData() {
     VarGlobal.data.add({
-      'id': id.text,
-      'nama': nama.text,
-      'type_staf': valtypestaf,
-      'status': valstatus,
+      'id': id.text.toString(),
+      'nama': nama.text.toString(),
+      'type_staf': valtypestaf.toString(),
+      'status': valstatus.toString(),
       'base_salary': baseSalary.toString(),
-      'overtime': overtime.text,
-      'insentif_position': valinsentive,
+      'overtime': overtime.text.toString(),
+      'insentif_position': valinsentive.toString(),
       'net_salary': netSalary.toString(),
       'gross_salary': grossSalary.toString(),
-      'bonus': value_overtime
+      'bonus': value_overtime.toString()
     });
   }
 
@@ -154,7 +155,7 @@ class _AddDataState extends State<AddData> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Overtime',
+                  'Overtime (1 - 12 hour)',
                   style: TextStyle(fontSize: 18),
                 ),
                 SizedBox(
@@ -371,7 +372,7 @@ class _AddDataState extends State<AddData> {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => AdminHome(),
+                  builder: (context) => MainNavigatorAdmin(),
                 ));
           },
           child: Text(

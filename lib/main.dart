@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:manbudget/pages/splash.dart';
 import 'package:manbudget/pages/start.dart';
 import 'package:manbudget/var_global.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           appBarTheme: AppBarTheme(color: Colors.purple),
           textTheme: GoogleFonts.poppinsTextTheme()),
-      home: StartPage(),
+      home: Splash(),
     );
   }
 }

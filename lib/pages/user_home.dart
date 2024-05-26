@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:manbudget/pages/start.dart';
 import 'package:manbudget/pages/user_detail.dart';
 import 'package:manbudget/var_global.dart';
 
@@ -10,6 +11,21 @@ class UserHome extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Slip Gaji'),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => StartPage(),
+                    ),
+                    (route) => false);
+              },
+              icon: Icon(
+                Icons.logout,
+                color: Colors.white,
+              ))
+        ],
       ),
       body: ListView.builder(
         padding: EdgeInsets.only(top: 20),
@@ -22,25 +38,23 @@ class UserHome extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => UserDetail(
-                            // id: VarGlobal.data[index]['id'] ?? 'error',
-                            // nama: VarGlobal.data[index]['nama'] ?? 'error',
-                            // type_staf:
-                            //     VarGlobal.data[index]['type_staf'] ?? 'error',
-                            // status: VarGlobal.data[index]['status'] ?? 'error',
-                            // base_salary:
-                            //     VarGlobal.data[index]['base_salary'] ?? 'error',
-                            // overtime:
-                            //     VarGlobal.data[index]['overtime'] ?? 'error',
-                            // insentif_position: VarGlobal.data[index]
-                            //         ['insentif_position'] ??
-                            //     'error',
-                            // net_salary:
-                            //     VarGlobal.data[index]['net_salary'] ?? 'error',
-                            // gross_salary: VarGlobal.data[index]
-                            //         ['gross_salary'] ??
-                            //     'error',
-                            //bonus: VarGlobal.data[index]['bonus'] ?? 'error'
-                            )));
+                            id: VarGlobal.data[index]['id'] ?? 'error',
+                            nama: VarGlobal.data[index]['nama'] ?? 'error',
+                            type_staf:
+                                VarGlobal.data[index]['type_staf'] ?? 'error',
+                            status: VarGlobal.data[index]['status'] ?? 'error',
+                            base_salary:
+                                VarGlobal.data[index]['base_salary'] ?? 'error',
+                            overtime:
+                                VarGlobal.data[index]['overtime'] ?? 'error',
+                            insentif_position: VarGlobal.data[index]
+                                    ['insentif_position'] ??
+                                'error',
+                            net_salary:
+                                VarGlobal.data[index]['net_salary'] ?? 'error',
+                            gross_salary: VarGlobal.data[index]
+                                    ['gross_salary'] ??
+                                'error')));
               },
               child: Container(
                 alignment: Alignment.center,
